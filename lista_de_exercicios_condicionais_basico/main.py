@@ -192,3 +192,122 @@ def validar_entrada(mensagem):
 numero = validar_entrada("Digite um Número: ")
 verificacao = "Número entre 10 e 20" if numero > 10.0 and numero < 20.0 else "Número fora do intervalo"
 print(verificacao)
+
+# 10 Crie um programa que recebe três números do usuário e determina qual é o maior número, utilizando apenas condicionais.
+
+def validar_entrada(mensagem):
+  while True:
+    try:
+      valor = float(input(mensagem))
+      if valor >= 1:
+        return valor
+      print("Número Inválido. O número tem que ser maior que 0")
+    except ValueError:
+      print("Entrada Inválida. Digite um número válido")
+
+num1 = validar_entrada("Digite um número: ")
+num2 = validar_entrada("Digite mais um número: ")
+num3 = validar_entrada("Digite o último número: ")
+if num1 > num2 and num1 > num3:
+  print(f"Número {num1} Maior")
+elif num2 > num1 and num2 > num3:
+  print(f"Número {num2} maior")
+elif num3 > num2 and num3 > num1:
+  print(f"Número {num3} maior")
+else:
+  print("Números iguais")
+
+# 11 - Implemente um programa que solicita ao usuário o  ano de nascimento e classifica a faixa etária em  "Criança", "Adolescente", "Adulto Jovem" ou  "Adulto".
+
+def validar_entrada(mensagem):
+  while True:
+    try:
+      valor = int(input(mensagem))
+      return valor
+    except ValueError:
+      print("Entrada Inválida. Digite um número válido")
+
+idade = validar_entrada("Quantos anos você tem? ")
+if idade < 12:
+  print("Você é uma criança")
+elif idade < 18:
+  print("Você é um adolescente")
+elif idade < 25:
+  print("Você é um adulto jovem")
+else:
+  print("Você é um adulto")
+
+# 12 - Crie um programa que simula o jogo Pedra, Papel e  Tesoura. Receba a escolha do usuário e compare  com uma escolha aleatória do computador.
+
+from random import randint
+from time import sleep
+
+itens = ("pedra" , "papel" , "tesoura")
+computador = randint(0, 2)
+
+print('''Suas Ações:
+[0] PEDRA
+[1] PAPEL
+[2] TESOURA''')
+
+jogador = int(input("Qual é a sua jogada? "))
+
+print("JO")
+sleep(1)
+print("KEN")
+sleep(1)
+print("PÔ")
+sleep(1)
+print("-=" * 11)
+
+print(f"Computador jogou: {itens[computador]}")
+print(f"Jogador jogou: {itens[jogador]}")
+
+if computador == 0:
+  if jogador == 0:
+    print("EMPATE")
+  elif jogador == 1:
+    print("JOGADOR VENCE!") 
+  elif jogador == 2:
+    print("COMPUTADOR VENCEU")
+  else: 
+    print("JOGADA INVÁLIDA")
+
+if computador == 1:
+  if jogador == 0:
+    print("COMPUTADOR VENCEU")
+  elif jogador == 1:
+    print("EMPATE") 
+  elif jogador == 2:
+    print("JOGADOR VENCEU!")
+  else: 
+    print("JOGADA INVÁLIDA")
+
+if computador == 2:
+  if jogador == 0:
+    print("JOGADOR VENCEU!")
+  elif jogador == 1:
+    print("COMPUTADOR VENCEU") 
+  elif jogador == 2:
+    print("EMPATE")
+  else: 
+    print("JOGADA INVÁLIDA")
+
+# 13 - Desenvolva um algoritmo que receba do usuário os  valores a, b e c, de uma equação do segundo grau  (ax^2 + bx + c = 0) e determine as raízes.
+import math
+
+a = float(input("Digite o coeficiente a: "))
+b = float(input("Digite o coeficiente b: "))
+c = float(input("Digite o coeficiente c: "))
+
+delta = b ** 2 - 4 * a * c
+
+if delta > 0:
+  x1 = (-b + math.sqrt(delta)) / (2*a)
+  x2 = (-b - math.sqrt(delta)) / (2*a)
+  print(f"As raizes da equação são: x1 = {x1:.2f} e x2 = {x2:.2f}")
+elif delta == 0:
+  x = -b / (2*a)
+  print(f"A equação tem uma raiz única real: x = {x:.2f}")
+else:
+  print("A equação não possuí raízes reais")
