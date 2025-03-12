@@ -1,4 +1,4 @@
-#Crie um programa que simula o jogo Pedra, Papel e  Tesoura. Receba a escolha do usuário e compare  com uma escolha aleatória do computador.
+# 12 - Crie um programa que simula o jogo Pedra, Papel e  Tesoura. Receba a escolha do usuário e compare  com uma escolha aleatória do computador.
 
 from random import randint
 from time import sleep
