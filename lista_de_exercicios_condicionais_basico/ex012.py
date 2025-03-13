@@ -13,11 +13,11 @@ print('''Suas Ações:
 
 jogador = int(input("Qual é a sua jogada? "))
 
-print("JO")
+print("PEDRA")
 sleep(1)
-print("KEN")
+print("PAPEL")
 sleep(1)
-print("PÔ")
+print("TESOURA")
 sleep(1)
 print("-=" * 11)
 
