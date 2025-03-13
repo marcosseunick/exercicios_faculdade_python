@@ -1,9 +1,18 @@
 # 13 - Desenvolva um algoritmo que receba do usuário os  valores a, b e c, de uma equação do segundo grau  (ax^2 + bx + c = 0) e determine as raízes.
 import math
+def validar_entrada(mensagem):
+  while True:
+    try:
+      valor = float(input(mensagem))
+      if valor > 0:
+        return valor
+      print("Valor Inválido. Digite um Número maior que 0")
+    except ValueError:
+      print("Entrada Inválida. Digite um número válido")
 
-a = float(input("Digite o coeficiente a: "))
-b = float(input("Digite o coeficiente b: "))
-c = float(input("Digite o coeficiente c: "))
+a = validar_entrada("Digite o coeficiente a: ")
+b = validar_entrada("Digite o coeficiente b: ")
+c = validar_entrada("Digite o coeficiente c: ")
 
 delta = b ** 2 - 4 * a * c
 
