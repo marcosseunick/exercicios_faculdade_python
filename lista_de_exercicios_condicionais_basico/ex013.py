@@ -1,5 +1,6 @@
 # 13 - Desenvolva um algoritmo que receba do usuário os  valores a, b e c, de uma equação do segundo grau  (ax^2 + bx + c = 0) e determine as raízes.
 import math
+
 def validar_entrada(mensagem):
   while True:
     try:
