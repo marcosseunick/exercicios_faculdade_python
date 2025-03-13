@@ -296,9 +296,19 @@ if computador == 2:
 # 13 - Desenvolva um algoritmo que receba do usuário os  valores a, b e c, de uma equação do segundo grau  (ax^2 + bx + c = 0) e determine as raízes.
 import math
 
-a = float(input("Digite o coeficiente a: "))
-b = float(input("Digite o coeficiente b: "))
-c = float(input("Digite o coeficiente c: "))
+def validar_entrada(mensagem):
+  while True:
+    try:
+      valor = float(input(mensagem))
+      if valor > 0:
+        return valor
+      print("Valor Inválido. Digite um Número maior que 0")
+    except ValueError:
+      print("Entrada Inválida. Digite um número válido")
+
+a = validar_entrada("Digite o coeficiente a: ")
+b = validar_entrada("Digite o coeficiente b: ")
+c = validar_entrada("Digite o coeficiente c: ")
 
 delta = b ** 2 - 4 * a * c
 
@@ -311,3 +321,46 @@ elif delta == 0:
   print(f"A equação tem uma raiz única real: x = {x:.2f}")
 else:
   print("A equação não possuí raízes reais")
+
+# 14 - Elabore um algoritmo que recebe 05 bits individualmente de um número binário e mostre o número decimal.
+
+bit1 = int(input("Digite o primeiro bit (0 ou 1): "))
+bit2 = int(input("Digite o segundo bit (0 ou 1): "))
+bit3 = int(input("Digite o terceiro bit (0 ou 1): "))
+bit4 = int(input("Digite o quarto bit (0 ou 1): "))
+bit5 = int(input("Digite o quinto bit (0 ou 1): "))
+
+if (bit1 in {0, 1} and bit2 in {0, 1} and bit3 in {0, 1} and bit4 in {0, 1} and bit5 in {0, 1}):
+  binario = f"{bit1}{bit2}{bit3}{bit4}{bit5}"
+  decimal = 0
+  for i in range(5):
+    bit = int(binario[i])
+    potencia = 4 - i
+    decimal += bit * (2**potencia)
+  print(f"O número binário {binario} em decimal é: {decimal}")
+else:
+  print("Por favor, insira apenas bits válidos (0 ou 1).")
+
+# 15 - Crie um programa dado solicite a largura e o  comprimento de uma sala (supondo que a sala seja quadrática), 
+# solicite a largura e o tamanho do piso  e mostre quantos peças do preciso será necessário para revestir toda a sala
+
+def validar_entrada(mensagem):
+  while True:
+    try:
+      valor = float(input(mensagem))
+      if valor > 0:
+        return valor
+      print("Valor Inválido. Digite um Número maior que 0")
+    except ValueError:
+      print("Entrada Inválida. Digite um número válido")
+
+largura = validar_entrada("Digite a largura da sala em metros: ")
+comprimento = validar_entrada("Digite o comprimento da sala em metros: ")
+largura_do_piso = validar_entrada("Digite a largura do seu piso em metros: ")
+tamanho_piso = validar_entrada("Digite o tamanho do seu piso em metros: ")
+
+area_sala = largura * comprimento
+area_piso = largura * tamanho_piso
+quantidade_de_pecas = area_sala/area_piso
+
+print(f"Você usará aproximadamente {quantidade_de_pecas} pisos")
