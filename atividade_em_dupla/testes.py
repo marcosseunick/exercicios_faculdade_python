@@ -1,6 +1,9 @@
 import funcoes_com_listas
 import funcoes_com_dicionarios
 
+
+#Funções com listas:
+
 #1
 assert funcoes_com_listas.criar_lista() == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 assert funcoes_com_listas.criar_lista() == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
@@ -75,3 +78,8 @@ assert funcoes_com_listas.concatenar_listas(["Abacate"], ["Sushi"]) == ["Abacate
 assert funcoes_com_listas.limpar_lista([1, 2, 3, 4, 5]) == []
 assert funcoes_com_listas.limpar_lista(['a', 'b']) == []
 assert funcoes_com_listas.limpar_lista(['c', 'd']) == []
+
+
+
+#Funções com dicionários:
+
