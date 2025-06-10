@@ -1,0 +1,7 @@
+dentro_do_arquivo = open("familia.txt", "r")
+linhas = dentro_do_arquivo.readlines()
+
+for linha in linhas:
+    print(linha)
+
+dentro_do_arquivo.close()
