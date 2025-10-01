@@ -16,4 +16,4 @@ def remover_exercicio(id_do_exercicio):
     pass
 
 def atualizar_exercicio(id_do_exercicio, novos_dados):
-    pass
+    print("ola mundo")
