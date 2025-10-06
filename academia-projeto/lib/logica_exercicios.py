@@ -1,11 +1,12 @@
 import gerenciador_json
 
+
 ARQUIVO_EXERCICIOS = "db/exercicios.json"
 
 def listar_exercicios():
-    dados = gerenciador_json.carregar_exercicios(ARQUIVO_EXERCICIOS)
-    print(dados)
-
+    dados = gerenciador_json.carregar_dados_do_arquivo(ARQUIVO_EXERCICIOS)
+    return dados
+print(listar_exercicios())
 
 def adicionar_exercicio():
     pass

@@ -5,10 +5,10 @@ def carregar_dados_do_arquivo(caminho_do_arquivo):
     try:
         with open(caminho_do_arquivo, 'r', encoding='utf-8') as arquivo:
             return json.load(arquivo)    
-    except (FileNotFoundError, json.JSONDecodeError):
+    except (FileNotFoundError):
         return []
-    except Exception:
-        return []
+    
+
 def salvar_dados_do_arquivo(caminho_do_arquivo, dados_para_salvar):
     try:
         with open(caminho_do_arquivo, 'w', encoding='utf-8') as arquivo:
@@ -17,10 +17,12 @@ def salvar_dados_do_arquivo(caminho_do_arquivo, dados_para_salvar):
     except Exception as e:
         print(f"Erro ao salvar o aquivo {caminho_do_arquivo} : {e}")
         return False
+    
+    
 CAMINHO_EXERCICIOS = 'db/exercicios.json'
 CAMINHO_TREINOS = 'db/treinos.json'
 
-def carregar_exercicios():
+def carregar_exercicios(caminho_do_arquivo):
     return carregar_dados_do_arquivo(CAMINHO_EXERCICIOS)
 
 def salvar_exercicios(lista_exercicios):
