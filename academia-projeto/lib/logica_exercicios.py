@@ -14,7 +14,19 @@ def buscar_exercicio_por_nome(nome_pesquisado):
     pass
 
 def remover_exercicio(id_do_exercicio):
-    pass
+    listar_exercicios = gerenciador_json.carregar_dados_do_arquivo(ARQUIVO_EXERCICIOS)
+
+    tamanho_original = len(listar_exercicios)
+
+    nova_lista_exercicios = [
+        exercicio for exercicio in listar_exercicios
+        if exercicio.get("id") != id_do_exercicio
+    ]
+
+    if len(nova_lista_exercicios) < tamanho_original:
+        gerenciador_json.salvar_dados_do_arquivo(ARQUIVO_EXERCICIOS, nova_lista_exercicios)
+        return True
+    return False
 
 def atualizar_exercicio(id_do_exercicio, novos_dados):
     lista_exercicios = gerenciador_json.carregar_dados_do_arquivo(ARQUIVO_EXERCICIOS)
