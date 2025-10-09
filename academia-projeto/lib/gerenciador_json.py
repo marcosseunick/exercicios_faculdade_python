@@ -5,7 +5,7 @@ def carregar_dados_do_arquivo(caminho_do_arquivo):
     try:
         with open(caminho_do_arquivo, 'r', encoding='utf-8') as arquivo:
             return json.load(arquivo)    
-    except (FileNotFoundError):
+    except (FileNotFoundError, json.JSONDecodeError):
         return []
     
 
