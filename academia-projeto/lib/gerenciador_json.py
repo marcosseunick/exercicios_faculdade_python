@@ -7,8 +7,8 @@ def carregar_dados_do_arquivo(caminho_do_arquivo):
             return json.load(arquivo)    
     except (FileNotFoundError, json.JSONDecodeError):
         return []
-    except Exception:
-        return []
+    
+
 def salvar_dados_do_arquivo(caminho_do_arquivo, dados_para_salvar):
     try:
         with open(caminho_do_arquivo, 'w', encoding='utf-8') as arquivo:
@@ -16,4 +16,6 @@ def salvar_dados_do_arquivo(caminho_do_arquivo, dados_para_salvar):
         return True
     except Exception as e:
         print(f"Erro ao salvar o aquivo {caminho_do_arquivo} : {e}")
-        return False  
+        return False
+    
+
